@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú — Buggy Mountain Road</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="top-banner">Promociones del día: Pregunta por el platillo especial</div>
+    <div class="container header-inner">
+      <h1 class="logo">
+        <!-- simple SVG icon with yellow/red accents -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px">
+          <circle cx="12" cy="8" r="4" fill="#f59e0b" />
+          <rect x="6" y="12" width="12" height="6" rx="2" fill="#ef4444" />
+        </svg>
+        Restaurante
+      </h1>
+      <nav class="main-nav">
+        <a href="/">Menú</a>
+        <a href="/admin/">Admin</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="container">Todos los derechos reservados a Lunar soft</div>
+  </footer>
+</body>
+</html>

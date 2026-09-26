@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Borrar platillo</h2>
+  <p>¿Eliminar "{{ dish.name }}"?</p>
+  <form method="post">{% csrf_token %}
+    <button class="btn danger" type="submit">Sí, borrar</button>
+    <a class="btn" href="/">Cancelar</a>
+  </form>
+{% endblock %}

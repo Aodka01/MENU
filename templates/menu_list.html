@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero">
+  <div>
+    <h2>Menú</h2>
+    <p class="small">Selecciona los platillos fácilmente.</p>
+  </div>
+  <div class="search">
+    <form method="get" action="/">
+      <input name="q" placeholder="Buscar platillo..." value="{{ request.GET.q }}">
+      <button class="btn" type="submit">Buscar</button>
+    </form>
+  </div>
+</div>
+
+<div class="grid">
+  {% for dish in dishes %}
+  <div class="card">
+    {% if dish.image %}
+      <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+    {% else %}
+      <div class="no-image">Sin imagen</div>
+    {% endif %}
+    <div class="card-body">
+      <h3>{{ dish.name }}</h3>
+      <p class="desc">{{ dish.description }}</p>
+      <div class="meta">
+        <span class="price-pill">${{ dish.price }}</span>
+      </div>
+    </div>
+    <div class="ribbon">Oferta</div>
+  </div>
+  {% empty %}
+    <p>No hay platillos aún. Añade uno nuevo.</p>
+  {% endfor %}
+</div>
+{% endblock %}
